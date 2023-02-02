@@ -1,0 +1,16 @@
+{
+  "name": "jira-reporter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "serve .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luke McFarlane",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parse": "^5.3.4",
+    "serve": "^14.2.0"
+  }
+}
