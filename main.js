@@ -1,6 +1,18 @@
-import handleCsvFileUpload from './modules/handle-csv-file-upload.js'
+import { parse } from 'csv-parse/sync'
+import Report from './modules/report.js'
+import renderReport from './modules/render-report.js'
+
+const epics = ['ESTE-17']
 
 window.addEventListener("load", (event) => {
   const jiraDataFileInput = document.querySelector('#jira-data')
-  jiraDataFileInput.addEventListener('change', handleCsvFileUpload)
+  jiraDataFileInput.addEventListener('change', async ({ target }) => {
+    const file = target.files[0]
+    const text = await file.text()
+    const data = parse(text, { columns: true })
+
+    const report = new Report(data, { epics })
+
+    renderReport(report)
+  })
 })
