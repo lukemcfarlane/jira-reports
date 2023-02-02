@@ -9,7 +9,8 @@ function renderEpic(epic) {
 
   ;[
     `Total story points: ${epic.totalStoryPoints}`,
-    `Total time spent: ${epic.totalTimeSpent}`
+    `Remaining story points: ${epic.totalRemainingStoryPoints}`,
+    `Total time spent: ${epic.totalTimeSpent}`,
   ].forEach(summaryText => {
     const summaryDiv = document.createElement('div')
     summaryDiv.textContent = summaryText
