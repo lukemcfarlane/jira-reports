@@ -1,3 +1,3 @@
 export default function renderReport(report) {
-  console.log('rendering report:', report.filteredIssues)
+  console.log('rendering report:', report.epics)
 }
