@@ -2,10 +2,19 @@ function renderEpic(epic) {
   const cols = ['Key', 'Summary', 'Status', 'Story Points', 'Time Spent']
 
   const containerDiv = document.createElement('div')
+
   const h2El = document.createElement('h2')
   h2El.textContent = epic.key
-
   containerDiv.appendChild(h2El)
+
+  ;[
+    `Total story points: ${epic.totalStoryPoints}`,
+    `Total time spent: ${epic.totalTimeSpent}`
+  ].forEach(summaryText => {
+    const summaryDiv = document.createElement('div')
+    summaryDiv.textContent = summaryText
+    containerDiv.appendChild(summaryDiv)
+  })
 
   const tableEl = document.createElement('table')
   const tHeadEl = document.createElement('thead')
