@@ -1,12 +1,12 @@
 export default class Report {
-  constructor(data, { epics }) {
-    this.data = data
+  constructor(issues, { epics }) {
     this.epics = epics
+    this.issues = issues
   }
 
-  get issues() {
-    return this.data.filter(row => {
-      return this.epics.includes(row['Custom field (Epic Link)'])
+  get filteredIssues() {
+    return this.issues.filter(row => {
+      return this.epics.includes(row.epicKey)
     })
   }
 }
